@@ -1,7 +1,15 @@
 # main.py — Kira BlackFox Bot v4
 # Требует: pip install pytelegrambotapi
 # Поместите изображения в папку "images" (опционально)
+import os
+TOKEN = os.getenv('BOT_TOKEN')
+print(f"🔧 Token from env: {TOKEN}")
 
+if not TOKEN:
+    print("❌ ERROR: BOT_TOKEN not found!")
+    exit(1)
+else:
+    print("✅ Token found!")
 import telebot
 from telebot import types
 import os
@@ -14,7 +22,12 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 # ==============================
 import os
 TOKEN = os.getenv('BOT_TOKEN')
-
+ Проверка токена
+if not TOKEN:
+    print("❌ ERROR: BOT_TOKEN not found!")
+    exit(1)
+else:
+    print("✅ Token found, starting bot...")
 bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
 # ==============================
