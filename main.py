@@ -12,7 +12,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 # ==============================
 # 🔐 TOKEN — вставлен ваш токен
 # ==============================
-TOKEN = "8517148151:AAHGkLOO5b4OeRkVojI-rEfEvD2h26fL-BA"
+import os
+TOKEN = os.getenv('BOT_TOKEN')
 
 bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
