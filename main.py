@@ -1,39 +1,19 @@
 # main.py — Kira BlackFox Bot v4
 # Требует: pip install pytelegrambotapi
 # Поместите изображения в папку "images" (опционально)
-print("🔧 Script started!")
-print("🔧 Checking environment...")
+import telebot
+from telebot import types
+import os
+import logging
 
-try:
-    import os
-    print("🔧 OS imported")
-    
-    import telebot
-    print("🔧 Telebot imported")
-    
-    from telebot import types
-    print("🔧 Types imported")
-    
-    import logging
-    print("🔧 Logging imported")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
-    TOKEN = "8517148151:AAHGkLOO5b4OeRkVojI-rEfEvD2h26fL-BA"
-    print(f"🔧 Token from env: {TOKEN}")
+# ==============================
+# 🔐 TOKEN — вставлен ваш токен
+# ==============================
+TOKEN = "8517148151:AAHGkLOO5b4OeRkVojI-rEfEvD2h26fL-BA"
 
-    if not TOKEN:
-        print("❌ ERROR: BOT_TOKEN not found!")
-        exit(1)
-    else:
-        print("✅ Token found!")
-
-    print("🔧 Creating bot instance...")
-    bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
-    print("✅ Bot instance created!")
-
-except Exception as e:
-    print(f"❌ CRITICAL ERROR: {e}")
-    exit(1)
-
+bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
 # ==============================
 # 📁 ПУТИ К ИЗОБРАЖЕНИЯМ (опционально)
@@ -291,7 +271,7 @@ def callback(c):
 if __name__ == "__main__":
     print("Bot v4 running...")
     try:
-        bot.infinity_polling(timeout=60, long_polling_timeout=60, restart_on_change=True)
+        bot.infinity_polling(timeout=60, long_polling_timeout=60)
     except KeyboardInterrupt:
         print("Stopped by user")
     except Exception as e:
