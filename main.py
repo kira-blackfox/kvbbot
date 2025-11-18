@@ -17,7 +17,7 @@ try:
     import logging
     print("🔧 Logging imported")
 
-    TOKEN = os.getenv('BOT_TOKEN')
+    TOKEN = "8517148151:AAHGkLOO5b4OeRkVojI-rEfEvD2h26fL-BA"
     print(f"🔧 Token from env: {TOKEN}")
 
     if not TOKEN:
