@@ -277,3 +277,6 @@ if __name__ == "__main__":
         print("Stopped by user")
     except Exception as e:
         logging.exception("Bot crashed: %s", e)
+        
+import os
+port = int(os.environ.get("PORT", 5000))
