@@ -272,7 +272,7 @@ def callback(c):
 if __name__ == "__main__":
     print("Bot v4 running...")
     try:
-        bot.infinity_polling(timeout=60, long_polling_timeout=60)
+        bot.infinity_polling(timeout=60, long_polling_timeout=60, restart_on_change=True)
     except KeyboardInterrupt:
         print("Stopped by user")
     except Exception as e:
