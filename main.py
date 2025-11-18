@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 # ==============================
 import os
 TOKEN = os.getenv('BOT_TOKEN')
- Проверка токена
+ 
 if not TOKEN:
     print("❌ ERROR: BOT_TOKEN not found!")
     exit(1)
